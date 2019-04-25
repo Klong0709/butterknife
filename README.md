@@ -42,9 +42,18 @@ Download
 --------
 
 ```groovy
+android {
+  ...
+  // Butterknife requires Java 8.
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+}
+
 dependencies {
-  implementation 'com.jakewharton:butterknife:8.8.1'
-  annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+  implementation 'com.jakewharton:butterknife:10.1.0'
+  annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
 }
 ```
 
@@ -63,9 +72,10 @@ To use Butter Knife in a library, add the plugin to your `buildscript`:
 buildscript {
   repositories {
     mavenCentral()
+    google()
    }
   dependencies {
-    classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
+    classpath 'com.jakewharton:butterknife-gradle-plugin:10.1.0'
   }
 }
 ```
